@@ -1,6 +1,6 @@
 import axios from 'axios';
 const axiosClient  = axios.create({
-    baseURL:'http://localhost:3000',
+    baseURL:'https://backend-f.vercel.app',
     
     headers:{
         'Content-Type':'application/json'
@@ -9,6 +9,7 @@ const axiosClient  = axios.create({
 });
 axiosClient.interceptors.request.use((config) => {
   const token = localStorage.getItem('token'); // Or from Redux store
+  console.log(token)
   if (token) {
     config.headers.Authorization = `Bearer ${token}`;
   }
