@@ -528,7 +528,7 @@ const HomePage = () => {
                                         Tags
                                     </label>
                                     <div className="flex flex-wrap gap-2">
-                                        {['all', 'array', 'linked-list', 'binary-tree', 'dynamic-programming'].map((tag) => (
+                                        {['all', 'array', 'linkedlist', 'binary-tree', 'dynamic-programming'].map((tag) => (
                                             <button
                                                 key={tag}
                                                 onClick={() => setFilters({ ...filters, tags: tag })}
