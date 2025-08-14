@@ -71,8 +71,8 @@ export default function App() {
   <Route path="/premium" element={isAuthenticated ? <PremiumPanel /> : <Navigate to="/login" />} />
   <Route path="/contest" element={isAuthenticated ? <Contestpage /> : <Navigate to="/login" />} />
   <Route path="/aa" element={isAuthenticated ? <DiscussPanel /> : <Navigate to="/login" />} />
-  <Route path="/payment/success" element={isAuthenticated ? <Success /> : <Navigate to="/login" />} />
-  <Route path="/payment/cancel" element={isAuthenticated ? <Canceled /> : <Navigate to="/login" />} />
+  <Route path="/payment/success" element={ <Success />} />
+  <Route path="/payment/cancel" element={<Canceled />} />
   <Route path="/leaderboard" element={isAuthenticated? <Leaderboard></Leaderboard>:<Navigate to="/login" />}></Route>
 
   {/* Admin routes */}
