@@ -66,23 +66,23 @@ export default function App() {
   <Route path="/visualizer" element={isAuthenticated ?<DSVisualizer />:<Login></Login>} />
 
   {/* Protected routes */}
-  <Route path="/home" element={isAuthenticated ? <Homepage /> : <Navigate to="/login" />} />
-  <Route path="/problem" element={isAuthenticated ? <ProblemPage /> : <Navigate to="/login" />} />
-  <Route path="/premium" element={isAuthenticated ? <PremiumPanel /> : <Navigate to="/login" />} />
-  <Route path="/contest" element={isAuthenticated ? <Contestpage /> : <Navigate to="/login" />} />
-  <Route path="/aa" element={isAuthenticated ? <DiscussPanel /> : <Navigate to="/login" />} />
-  <Route path="/payment/success" element={ <Success />} />
+  <Route path="/home" element={isAuthenticated ? <Homepage /> : <Login></Login>} />
+  <Route path="/problem" element={isAuthenticated ? <ProblemPage /> : <Login></Login>} />
+  <Route path="/premium" element={isAuthenticated ? <PremiumPanel /> : <Login></Login>} />
+  <Route path="/contest" element={isAuthenticated ? <Contestpage /> : <Login></Login>} />
+  <Route path="/aa" element={isAuthenticated ? <DiscussPanel /> : <Login></Login>} />
+  <Route path="/payment/success"  element={isAuthenticated? <Success />:<Login></Login>} />
   <Route path="/payment/cancel" element={<Canceled />} />
   <Route path="/leaderboard" element={isAuthenticated? <Leaderboard></Leaderboard>:<Navigate to="/login" />}></Route>
 
   {/* Admin routes */}
-  <Route path="/admin" element={isAuthenticated && user?.role === 'admin' ? <AdminPanel /> : <Navigate to="/login" />} />
-  <Route path="/admin/create-problem" element={isAuthenticated && user?.role === 'admin' ? <AdminCreatePanel /> : <Navigate to="/login" />} />
-  <Route path="/admin/update-problem" element={isAuthenticated && user?.role === 'admin' ? <AdminUpdatePanel /> : <Navigate to="/login" />} />
-  <Route path="/admin/delete-problem" element={isAuthenticated && user?.role === 'admin' ? <AdminDeletePanel /> : <Navigate to="/login" />} />
-  <Route path="/admin/create-contest" element={isAuthenticated && user?.role === 'admin' ? <ContestPanel /> : <Navigate to="/login" />} />
-  <Route path="/admin/video-management" element={isAuthenticated && user?.role === 'admin' ? <AdminVideo /> : <Navigate to="/login" />} />
-  <Route path="/admin/upload/:problemId" element={isAuthenticated && user?.role === 'admin' ? <AdminUpload /> : <Navigate to="/login" />} />
+  <Route path="/admin" element={isAuthenticated && user?.role === 'admin' ? <AdminPanel /> : <Login></Login>} />
+  <Route path="/admin/create-problem" element={isAuthenticated && user?.role === 'admin' ? <AdminCreatePanel /> : <Login></Login>} />
+  <Route path="/admin/update-problem" element={isAuthenticated && user?.role === 'admin' ? <AdminUpdatePanel /> : <Login></Login>} />
+  <Route path="/admin/delete-problem" element={isAuthenticated && user?.role === 'admin' ? <AdminDeletePanel /> : <Login></Login>} />
+  <Route path="/admin/create-contest" element={isAuthenticated && user?.role === 'admin' ? <ContestPanel /> : <Login></Login>} />
+  <Route path="/admin/video-management" element={isAuthenticated && user?.role === 'admin' ? <AdminVideo /> : <Login></Login>} />
+  <Route path="/admin/upload/:problemId" element={isAuthenticated && user?.role === 'admin' ? <AdminUpload /> : <Login></Login>} />
 
 
 </Routes>
